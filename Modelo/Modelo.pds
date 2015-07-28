@@ -1,0 +1,102 @@
+Root-Coordinator
+ {
+  Simulator
+   {
+    Path = prooo/semaforo.h
+    Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,1.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/generador.h
+    Parameters = 2.500000e-01,3.000000e+01,1.000000e+00,2.000000e+00
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with lines title 'First output'","","","",""
+   }
+  Simulator
+   {
+    Path = prooo/esquina.h
+    Parameters = 1.000000e+01,3.000000e+01,4.000000e-01,1.000000e+00,2.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/calle.h
+    Parameters = 3.000000e+01,1.000000e+02,2.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/calle.h
+    Parameters = 3.000000e+01,8.000000e+01,2.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/calle.h
+    Parameters = 3.000000e+01,1.000000e+01,2.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/calle.h
+    Parameters = 3.000000e+01,1.000000e+01,2.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/semaforo.h
+    Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,1.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/generador.h
+    Parameters = 0.000000e+00,0.000000e+00,0.000000e+00,0.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/esquina.h
+    Parameters = 1.000000e+01,6.000000e+01,4.000000e-01,1.000000e+00,2.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/semaforo.h
+    Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,1.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/semaforo.h
+    Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,1.000000e+00
+   }
+  Simulator
+   {
+    Path = prooo/calle.h
+    Parameters = 6.500000e+01,3.000000e+02,2.000000e+00
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with points title 'First output'","","","",""
+   }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+    (0,0);(4,1)
+    (3,0);(5,0)
+    (3,1);(6,0)
+    (8,0);(7,1)
+    (9,0);(7,0)
+    (11,0);(5,1)
+    (12,0);(13,1)
+    (5,0);(10,0)
+    (7,0);(10,0)
+    (4,0);(3,0)
+    (13,0);(3,0)
+    (10,0);(2,0)
+    (10,0);(13,0)
+    (1,0);(14,0)
+    (1,0);(4,0)
+   }
+ }
