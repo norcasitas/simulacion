@@ -1,6 +1,4 @@
-/*Implementacion del modelo semaforo*/
 #include "semaforo.h"
-
 void semaforo::init(double t,...) {
 	
 	va_list parameters;
@@ -20,16 +18,12 @@ void semaforo::init(double t,...) {
 		}
 	}
 }
-// 1 == rojo
-// 2 == amarillo
-// 3 == verde
-
 double semaforo::ta(double t) {
 	return sigma;
 }
-
 void semaforo::dint(double t) {
-	if(color==1){
+
+if(color==1){
 		color= 3;
 		sigma=tiempoVerde;
 	}else{
@@ -44,9 +38,9 @@ void semaforo::dint(double t) {
 		}
 	}
 }
+void semaforo::dext(Event x, double t) {
 
-void semaforo::dext(Event x, double t){}
-
+}
 Event semaforo::lambda(double t) {
 	if (color==1){
 		y=3;
@@ -61,5 +55,6 @@ Event semaforo::lambda(double t) {
 				 }
 		 }
 }
+void semaforo::exit() {
 
-void semaforo::exit() {}
+}

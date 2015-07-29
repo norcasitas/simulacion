@@ -6,6 +6,7 @@
 #include "event.h"
 #include "stdarg.h"
 
+
 class semaforo: public Simulator { 
 
 //parameters
@@ -21,13 +22,13 @@ class semaforo: public Simulator {
 //aux
 	int y;
 
-	public:
-		semaforo(const char *n): Simulator(n) {};
-		void init(double, ...);
-		double ta(double t);
-		void dint(double);
-		void dext(Event , double );
-		Event lambda(double);
-		void exit();
+public:
+	semaforo(const char *n): Simulator(n) {};
+	void init(double, ...);
+	double ta(double t);
+	void dint(double);
+	void dext(Event , double );
+	Event lambda(double);
+	void exit();
 };
 #endif

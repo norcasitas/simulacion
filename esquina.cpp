@@ -30,7 +30,6 @@ return sigma;
 void esquina::dint(double t) {
 //debo recorrer la cola,  e ir desencolando los autos que salen, y actualizar los autos que quedan
 	int i=0;
-
 	Cola.dequeue();
 	while(i< Cola.size()){
 		Cola.setDistancia(i,Cola.getDistancia(i)-(velocidad*e));
@@ -50,24 +49,21 @@ void esquina::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 //Actualizo la distancia que le falta a los autos que estan en la lista y encolo el auto que ingresa.
-	if(Cola.size()==tamanioEsquina)
+			printLog("entrada esquina en tiempo: %d   \n",t);
+	if(Cola.size()*tamanioAuto >= tamanioEsquina)
 		printLog("Error: se lleno la esquina");
 	else{
 		int i=0;
 		while(i< Cola.size()){
 			Cola.setDistancia(i,Cola.getDistancia(i)-(velocidad*e));
 			i++;
-		}
-		if(*((int*)x.value)==1){ // solo enonolo
-			if(Cola.size()*tamanioAuto<tamanioEsquina){
-				Cola.enqueue(tamanioEsquina,velocidad);
-			}
-		}
-		if(Cola.size()>0)
-			sigma= (Cola.getDistancia(0)-(velocidad*e))/velocidad;
-		else
-			sigma= 1e20;
+		}		
+		Cola.enqueue(tamanioEsquina,velocidad);
+		sigma= (Cola.getDistancia(0)-(velocidad*e))/velocidad;
+
+
 	}
+
 }
 Event esquina::lambda(double t) {
 //This function returns an Event:
@@ -77,9 +73,8 @@ Event esquina::lambda(double t) {
 //     %NroPort% is the port number (from 0 to n-1)
 	double r = rng->Random();
 	y=1;
+	printLog("salida esquina en tiempo: %d   \n",t);
 	if (r<probabilidad){
-    printLog("%d salida esquina en tiempo:",t);
-
 		return Event(&y,0);
 	}
 	else{

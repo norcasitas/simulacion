@@ -26,7 +26,6 @@ void generador::dext(Event x, double t) {
 }
 Event generador::lambda(double t) {
 y=1;
-printLog("%dgenero tiempo", t);
 return Event(&y,0);
 }
 void generador::exit() {
