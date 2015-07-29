@@ -90,10 +90,27 @@ if(x.port == 0){
 				i++;
 		}
 		color = 1;
-		if(Cola.size()>0)
-			sigma= (Cola.getDistancia(0)-(Cola.getVelocidad(0)*e))/Cola.getVelocidad(0);
-		else
-			sigma= 1e20;	
+		if(Cola.size()>0){
+				if (Cola.getVelocidad(0) == 0){ //si al menos hay un frenado
+					int j = Cola.size()-1;
+					if (Cola.getVelocidad(j) == 0) //estan todos frenados
+							sigma= 1e20;
+					else {
+					int k = 0;
+						j--;
+						while (j>0 && k == 0){
+							if (Cola.getVelocidad(k) == 0)
+								k = j;
+							j--;
+						}
+						sigma = ((Cola.getDistancia(k+1)-(k*tamanioAuto)) - (velocidad*e))/velocidad; //calculo la distancia al proximo auto
+					}
+				} else { //si no hay autos frenados sigma es igual que siempre
+					sigma= (Cola.getDistancia(0)-(Cola.getVelocidad(0)*e))/Cola.getVelocidad(0);
+				}
+			} else {
+				sigma= 1e20;
+			}		
 	}
 	if(*((int*)x.value) == 2){//amarillo
 		int i = 0;
@@ -131,6 +148,7 @@ Event calle::lambda(double t) {
 
 y = 1;	
 if(color != 1){	
+	printLog("SALGO DE CALLE \n");
     return Event(&y,0);
 }
 	return Event(&y,1); 
