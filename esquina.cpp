@@ -49,7 +49,7 @@ void esquina::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 //Actualizo la distancia que le falta a los autos que estan en la lista y encolo el auto que ingresa.
-			printLog("entrada esquina en tiempo: %d   \n",t);
+			printLog("entrada esquina en tiempo: %f   \n",t);
 	if(Cola.size()*tamanioAuto >= tamanioEsquina)
 		printLog("Error: se lleno la esquina");
 	else{
@@ -73,11 +73,14 @@ Event esquina::lambda(double t) {
 //     %NroPort% is the port number (from 0 to n-1)
 	double r = rng->Random();
 	y=1;
-	printLog("salida esquina en tiempo: %d   \n",t);
+	printLog("salida esquina en tiempo: %f   ",t);
 	if (r<probabilidad){
+printLog("sale para la calle 1   \n");
 		return Event(&y,0);
 	}
 	else{
+printLog("sale para la calle 2   \n");
+
 		return Event(&y,1);	
 	}
 }
