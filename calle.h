@@ -33,6 +33,9 @@ double tamanioCalle;
 double tamanioAuto;
 
 
+
+
+
 public:
 	calle(const char *n): Simulator(n) {};
 	void init(double, ...);
