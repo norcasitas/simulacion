@@ -46,7 +46,7 @@ void calleConflictiva::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 if(x.port == 0){// viene un auto
-	printLog("Ingresa auto a calle  conflictiva en tiempo: %f\n",t);
+	//printLog("Ingresa auto a calle  conflictiva en tiempo: %f\n",t);
 	if(color == 1){//rojo
 		int j = 0;
 			while(j<Cola.size()){
@@ -74,9 +74,9 @@ if(x.port == 0){// viene un auto
 	if(tamanioAuto*Cola.size() < tamanioCalle){// si la calle no colapsa encolo
 		Cola.enqueue(tamanioCalle,velocidad);
 	}else{
-		printLog("Colapso la calle conflictiva\n");
+		printLog("Colapso la calle conflictiva en tiempo %f \n",t);
 	}
-	fprintf(data, "%lf %lf \n",t,(double)Cola.size());
+	(data, "%lf %lf \n",t,(double)Cola.size());
 
 /*
 ([d[i-1]+tamanioAuto,V],(d[0]-v.e)/V,V o A) Si d[i]-i*tamanioAuto <= v[i]*e & X=(V || A)
@@ -84,7 +84,7 @@ if(x.port == 0){// viene un auto
 */
 }else{
 	if(*((int*)x.value) == 1){//rojo
-		printLog("Cambio semaforo a rojo en tiempo: %f\n",t);
+		//printLog("Cambio semaforo a rojo en tiempo: %f\n",t);
 		int i = 0;
 		while(i<Cola.size()){
 				Cola.setDistancia(i,Cola.getDistancia(i)-(Cola.getVelocidad(i)*e));				
@@ -110,10 +110,10 @@ if(x.port == 0){// viene un auto
 			}
 			sigma = Cola.getDistancia(0)/velocidad;
 			if(*((int*)x.value) == 2){//amarill
-				printLog("Cambio semaforo a amarillo en tiempo: %f\n",t);
+				//printLog("Cambio semaforo a amarillo en tiempo: %f\n",t);
 				color = 2;
 			}else{
-				printLog("Cambio semaforo a verde en tiempo: %f\n",t);
+				//printLog("Cambio semaforo a verde en tiempo: %f\n",t);
 				color = 3;
 			}
 	}
@@ -126,17 +126,11 @@ Event calleConflictiva::lambda(double t) {
 //where:
 //     %&Value% points to the variable which contains the value.
 //     %NroPort% is the port number (from 0 to n-1)
-	printLog("Sale auto de la calle conflictiva en tiempo: %f\n",t);
+	//printLog("Sale auto de la calle conflictiva en tiempo: %f\n",t);
 	y = 1;	
 	return Event(&y,0); 
 }
 void calleConflictiva::exit() {
 //Code executed at the end of the simulation.
-	fclose(data);
-	FILE * gnuplotPipe = popen ("gnuplot -persistent", "w");
-	fprintf(gnuplotPipe,"%s \n", "set xlabel 'Tiempo'");
-	fprintf(gnuplotPipe,"%s \n", "set yrange [0:55] " );
-	fprintf(gnuplotPipe,"%s \n", "set grid ");
-	fprintf(gnuplotPipe,"%s \n", "set title 'Estado calle'");
-	fprintf(gnuplotPipe,"%s \n", "plot '../../output/grafico.dat' u 1:2 linecolor rgb 'red' with lines title 'Estado calle'");
+	fclose(data);	
 }

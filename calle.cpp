@@ -41,7 +41,7 @@ void calle::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 if(x.port == 0){// viene un auto
-	printLog("Ingresa auto en tiempo: %f\n",t);
+	//printLog("Ingresa auto en tiempo: %f\n",t);
 	if(color == 1){//rojo
 		int j = 0;
 			while(j<Cola.size()){
@@ -69,7 +69,7 @@ if(x.port == 0){// viene un auto
 	if(tamanioAuto*Cola.size() < tamanioCalle){// si la calle no colapsa encolo
 		Cola.enqueue(tamanioCalle,velocidad);
 	}else{
-		//printLog("Colapso la calle \n");
+		printLog("Colapso la calle \n");
 	}
 
 /*
@@ -120,7 +120,7 @@ Event calle::lambda(double t) {
 //where:
 //     %&Value% points to the variable which contains the value.
 //     %NroPort% is the port number (from 0 to n-1)
-	printLog("Sale auto de la calle en tiempo: %f\n",t);
+	//printLog("Sale auto de la calle en tiempo: %f\n",t);
 	y = 1;	
 	return Event(&y,0); 
 }

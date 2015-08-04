@@ -53,7 +53,7 @@ void esquina::dext(Event x, double t) {
 		i++;
 	}		
 	if(Cola.size()*tamanioAuto >= tamanioEsquina){
-		printLog("Se lleno la esquina");
+		printLog("Se lleno la esquina en tiempo %f \n",t);
 	}else{
 		Cola.enqueue(tamanioEsquina,velocidad);
 	}
@@ -72,14 +72,15 @@ Event esquina::lambda(double t) {
 //where:
 //     %&Value% points to the variable which contains the value.
 //     %NroPort% is the port number (from 0 to n-1)
+	//printLog("sale auto de la esquina en tiempo %f\n",t);
 	double r = rng->Random();
 	y=1;
 	if (r<=probabilidad){
-		printLog("sale auto de la esquina para calle 1 en tiempo %f\n",t);
+		//printLog("sale auto de la esquina para calle 1 en tiempo %f\n",t);
 		return Event(&y,0);
 	}
 	else{
-		printLog("sale auto de la esquina para calle 2 en tiempo %f\n",t);
+		//printLog("sale auto de la esquina para calle 2 en tiempo %f\n",t);
 		return Event(&y,1);	
 	}
 
