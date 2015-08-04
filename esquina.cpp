@@ -17,13 +17,12 @@ tamanioAuto= (int) va_arg(parameters,double);
 //obtengo el puntero para generar el random
 rng= new CRandomMersenne(seed);
 
-//inicio la cola
-
 sigma = 1e20; //sigma 1e20inito
 }
 
 double esquina::ta(double t) {
 //This function returns a double.
+
 return sigma;
 }
 void esquina::dint(double t) {
@@ -35,10 +34,9 @@ void esquina::dint(double t) {
 		i++;
 	}
 	if(Cola.size()>0)
-		sigma= (Cola.getDistancia(0)-(velocidad*e))/velocidad;
+		sigma= Cola.getDistancia(0)/velocidad;
 	else
 		sigma= 1e20;
-
 }
 void esquina::dext(Event x, double t) {
 //The input event is in the 'x' variable.
@@ -48,18 +46,24 @@ void esquina::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 //Actualizo la distancia que le falta a los autos que estan en la lista y encolo el auto que ingresa.
-	printLog("ingresa auto a la esquina en tiempo: %f\n",t);
-	if(Cola.size()*tamanioAuto >= tamanioEsquina)
+	//printLog("ingresa auto a la esquina en tiempo: %f\n",t);
+	int i=0;
+	while(i< Cola.size()){
+		Cola.setDistancia(i,Cola.getDistancia(i)-(velocidad*e));
+		i++;
+	}		
+	if(Cola.size()*tamanioAuto >= tamanioEsquina){
 		printLog("Se lleno la esquina");
-	else{
-		int i=0;
-		while(i< Cola.size()){
-			Cola.setDistancia(i,Cola.getDistancia(i)-(velocidad*e));
-			i++;
-		}		
+	}else{
 		Cola.enqueue(tamanioEsquina,velocidad);
-		sigma= (Cola.getDistancia(0)-(velocidad*e))/velocidad;
 	}
+	if(Cola.size()==0){
+		sigma= 1e20;
+	}
+	else{
+		sigma= Cola.getDistancia(0)/velocidad;
+	}
+
 
 }
 Event esquina::lambda(double t) {
@@ -70,14 +74,15 @@ Event esquina::lambda(double t) {
 //     %NroPort% is the port number (from 0 to n-1)
 	double r = rng->Random();
 	y=1;
-	if (r<probabilidad){
-		printLog("sale auto de la esquina para calle 1\n");
+	if (r<=probabilidad){
+		printLog("sale auto de la esquina para calle 1 en tiempo %f\n",t);
 		return Event(&y,0);
 	}
 	else{
-		printLog("sale auto de la esquina para calle 2\n");
+		printLog("sale auto de la esquina para calle 2 en tiempo %f\n",t);
 		return Event(&y,1);	
 	}
+
 }
 void esquina::exit() {
 //Code executed at the end of the simulation.

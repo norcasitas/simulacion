@@ -8,7 +8,6 @@
 #include "event.h"
 #include "stdarg.h"
 
-#include "time.h"
 #include "lib/randomc.h"
 #include "lib/stocc.h"
 
