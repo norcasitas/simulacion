@@ -43,7 +43,7 @@ void calle::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 if(x.port == 0){// viene un auto
-	printLog("ENTRA UN AUTO EN TIEMPO %f\n",t);
+	printLog("Ingresa auto en tiempo: %f\n",t);
 	if(color == 1){//rojo
 		int j = 0;
 			while(j<Cola.size()){
@@ -71,7 +71,7 @@ if(x.port == 0){// viene un auto
 	if(tamanioAuto*Cola.size() < tamanioCalle){// si la calle no colapsa encolo
 		Cola.enqueue(tamanioCalle,velocidad);
 	}else{
-		printLog("COLAPSA LA CALLE %d\n", Cola.size());
+		printLog("Colapso la calle \n");
 	}
 
 
@@ -80,9 +80,8 @@ if(x.port == 0){// viene un auto
 ([d[i-1]+tamanioAuto,0],inf,ROJO) Si d[i]-i*tamanioAuto <= v[i]*e & X=ROJO
 */
 }else{
-	printLog("cambia semaforo en tiempo %f",t);
-
 	if(*((int*)x.value) == 1){//rojo
+		printLog("Cambio semaforo a rojo en tiempo: %f\n",t);
 		int i = 0;
 		while(i<Cola.size()){
 				Cola.setDistancia(i,Cola.getDistancia(i)-(Cola.getVelocidad(i)*e));				
@@ -108,11 +107,12 @@ if(x.port == 0){// viene un auto
 			}
 			sigma = Cola.getDistancia(0)/velocidad;
 			if(*((int*)x.value) == 2){//amarill
+				printLog("Cambio semaforo a amarillo en tiempo: %f\n",t);
 				color = 2;
 			}else{
+				printLog("Cambio semaforo a verde en tiempo: %f\n",t);
 				color = 3;
 			}
-	
 	}
 	
 }
@@ -123,8 +123,8 @@ Event calle::lambda(double t) {
 //where:
 //     %&Value% points to the variable which contains the value.
 //     %NroPort% is the port number (from 0 to n-1)
+	printLog("Sale auto de la calle en tiempo: %f\n",t);
 	y = 1;	
-	printLog("SALGO DE CALLE en tiempo %f\n",t);
 	return Event(&y,0); 
 }
 void calle::exit() {

@@ -1,6 +1,5 @@
 #include "semaforo.h"
 void semaforo::init(double t,...) {
-	
 	va_list parameters;
 	va_start(parameters,t);
 	tiempoRojo=va_arg(parameters,double);
@@ -46,14 +45,14 @@ Event semaforo::lambda(double t) {
 		y=3;
 		return Event(&y,0);
 	}else{
-			if (color==3){
-				y=2;
-				return Event(&y,0);
-			}else{		
-						y=1;
-						return Event(&y,0);
-				 }
-		 }
+		if (color==3){
+			y=2;
+			return Event(&y,0);
+		}else{		
+			y=1;
+			return Event(&y,0);
+		}
+	}
 }
 void semaforo::exit() {
 

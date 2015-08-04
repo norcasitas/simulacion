@@ -70,7 +70,7 @@ Coupled
             Description = Atomic DEVS model
             Graphic
                 {
-                Position = -5805 ; -2655
+                Position = -6555 ; -1530
                 Dimension = 675 ; 675
                 Direction = Right
                 Color = 15
@@ -88,7 +88,7 @@ Coupled
         Atomic
             {
             Name = calleSanMartin
-            Ports = 2 ; 2
+            Ports = 2 ; 1
             Path = prooo/calle.h
             Description = Atomic DEVS model
             Graphic
@@ -114,7 +114,7 @@ Coupled
             Description = Plot input signal using GnuPlot
             Graphic
                 {
-                Position = -6255 ; -4335
+                Position = -1755 ; -2385
                 Dimension = 675 ; 720
                 Direction = Right
                 Color = 15
@@ -131,18 +131,12 @@ Coupled
                 Format5 = Str;  ; Formatting options for input 5
                 }
             }
-        Point
-            {
-            ConectedLines = 1 ; 3 ; 4
-            ConectedExtrems = Org ; Org ; Org
-            Position = -8475 ; -3975
-            }
         Line
             {
             Source = Cmp ;  2 ;  1 ; 0
-            Sink = Pnt ;  1 ; -1 ; 0
-            PointX = -9975 ; -8475 ; -8475
-            PointY = -4800 ; -4800 ; -3975
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -9975 ; -8475 ; -8475 ; -8640
+            PointY = -4800 ; -4800 ; -1350 ; -1350
             }
         Line
             {
@@ -153,17 +147,17 @@ Coupled
             }
         Line
             {
-            Source = Cmp ;  5 ;  1 ; -1
-            Sink = Pnt ;  1 ; -1 ; 0
-            PointX = -6390 ; -6390 ; -8475
-            PointY = -3975 ; -3975 ; -3975
+            Source = Cmp ;  3 ;  1 ; -1
+            Sink = Cmp ;  4 ;  1 ; 0
+            PointX = -6690 ; -7725 ; -7725
+            PointY = -1200 ; -1200 ; -1200
             }
         Line
             {
-            Source = Pnt ;  1 ; -1 ; 0
-            Sink = Cmp ;  4 ;  1 ; -1
-            PointX = -8475 ; -8475 ; -8475 ; -8640
-            PointY = -3975 ; -3975 ; -1350 ; -1350
+            Source = Cmp ;  5 ;  1 ; -1
+            Sink = Cmp ;  3 ;  1 ; 0
+            PointX = -1890 ; -5775 ; -5775
+            PointY = -2025 ; -2025 ; -1350
             }
         }
     }

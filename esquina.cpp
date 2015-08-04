@@ -20,9 +20,8 @@ rng= new CRandomMersenne(seed);
 //inicio la cola
 
 sigma = 1e20; //sigma 1e20inito
-
-
 }
+
 double esquina::ta(double t) {
 //This function returns a double.
 return sigma;
@@ -49,9 +48,9 @@ void esquina::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 
 //Actualizo la distancia que le falta a los autos que estan en la lista y encolo el auto que ingresa.
-			printLog("entrada esquina en tiempo: %f   \n",t);
+	printLog("ingresa auto a la esquina en tiempo: %f\n",t);
 	if(Cola.size()*tamanioAuto >= tamanioEsquina)
-		printLog("Error: se lleno la esquina");
+		printLog("Se lleno la esquina");
 	else{
 		int i=0;
 		while(i< Cola.size()){
@@ -60,8 +59,6 @@ void esquina::dext(Event x, double t) {
 		}		
 		Cola.enqueue(tamanioEsquina,velocidad);
 		sigma= (Cola.getDistancia(0)-(velocidad*e))/velocidad;
-
-
 	}
 
 }
@@ -73,14 +70,12 @@ Event esquina::lambda(double t) {
 //     %NroPort% is the port number (from 0 to n-1)
 	double r = rng->Random();
 	y=1;
-	printLog("salida esquina en tiempo: %f   ",t);
 	if (r<probabilidad){
-printLog("sale para la calle 1   \n");
+		printLog("sale auto de la esquina para calle 1\n");
 		return Event(&y,0);
 	}
 	else{
-printLog("sale para la calle 2   \n");
-
+		printLog("sale auto de la esquina para calle 2\n");
 		return Event(&y,1);	
 	}
 }
