@@ -1,0 +1,96 @@
+Root-Coordinator
+ {
+    Coordinator
+     {
+      Simulator
+       {
+        Path = prooo/semaforo.h
+        Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,1.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/generador.h
+        Parameters = 1.000000e-01,3.000000e+01,3.000000e+00,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/esquina.h
+        Parameters = 1.000000e+01,3.000000e+01,4.000000e-01,1.000000e+00,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/calle.h
+        Parameters = 3.000000e+01,1.000000e+02,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/calleConflictiva.h
+        Parameters = 6.500000e+01,8.000000e+01,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/semaforo.h
+        Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,3.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/esquina.h
+        Parameters = 1.000000e+01,3.000000e+01,5.000000e-01,1.000000e+00,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/semaforo.h
+        Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,1.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/generador.h
+        Parameters = 2.000000e-01,3.000000e+01,3.000000e+00,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/calle.h
+        Parameters = 3.000000e+01,1.000000e+02,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/calleLarga.h
+        Parameters = 3.000000e+01,3.000000e+02,2.000000e+00
+       }
+      Simulator
+       {
+        Path = prooo/semaforo.h
+        Parameters = 2.000000e+01,3.000000e+00,1.700000e+01,3.000000e+00
+       }
+      EIC
+       {
+       }
+      EOC
+       {
+       }
+      IC
+       {
+        (2,1);(4,0)
+        (1,0);(3,0)
+        (5,0);(4,1)
+        (0,0);(3,1)
+        (8,0);(9,0)
+        (7,0);(9,1)
+        (6,1);(10,0)
+        (11,0);(10,1)
+        (4,0);(6,0)
+        (9,0);(6,0)
+        (10,0);(2,0)
+        (3,0);(2,0)
+       }
+     }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+   }
+ }

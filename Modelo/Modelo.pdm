@@ -1,0 +1,416 @@
+Coupled
+    {
+    Type = Root
+    Name = Modelo
+    Ports = 0; 0
+    Description = 
+    Graphic
+        {
+        Position = 0; 0
+        Dimension = 600; 600
+        Direction = Right
+        Color = 15
+        Icon = 
+        Window = 5000; 5000; 5000; 5000
+        }
+    Parameters
+        {
+        }
+    System
+        {
+        Coupled
+            {
+            Type = Coordinator
+            Name = Coupled0
+            Ports = 0; 0
+            Description = Coupled DEVS model
+            Graphic
+                {
+                Position = -4230; -2610
+                Dimension = 675; 720
+                Direction = Right
+                Color = 15
+                Icon = %basicelements%coupled.svg
+                Window = 5000; 5000; 5000; 5000
+                }
+            Parameters
+                {
+                }
+            System
+                {
+                Atomic
+                    {
+                    Name = Semaforo San Martin
+                    Ports = 0 ; 1
+                    Path = prooo/semaforo.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -13605 ; -1755
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = ../atomics/prooo/imagenes/semaforo.jpg
+                        }
+                    Parameters
+                        {
+                        tiempoRojo = Val; 20 ; 
+                        tiempoAmarillo = Val; 3 ; 
+                        tiempoVerde = Val; 17 ; 
+                        colorInicial = Val; 1 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Generador San martin
+                    Ports = 0 ; 1
+                    Path = prooo/generador.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -13530 ; -3555
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        tasa = Val; 0.1 ; 
+                        velCalle = Val; 30 ; 
+                        seed = Val; 3 ; 
+                        tamAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Esquina1
+                    Ports = 1 ; 2
+                    Path = prooo/esquina.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -9405 ; -2055
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        tamanioEsquina = Val; 10 ; 
+                        velocidad = Val; 30 ; 
+                        probabilidad = Val; 0.4 ; 
+                        seed = Val; 1 ; 
+                        tamanioAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = calleSanMartin
+                    Ports = 2 ; 1
+                    Path = prooo/calle.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -11355 ; -2055
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        velocidad = Val; 30 ; 
+                        tamanioCalle = Val; 100 ; 
+                        tamanioAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Calle conflictiva
+                    Ports = 2 ; 1
+                    Path = prooo/calleConflictiva.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -7080 ; -1755
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        velocidad = Val; 65 ; 
+                        tamanioCalle = Val; 80 ; 
+                        tamanioAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Semaforo Calle conflictiva
+                    Ports = 0 ; 1
+                    Path = prooo/semaforo.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -8280 ; -1080
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = ../atomics/prooo/imagenes/semaforo.jpg
+                        }
+                    Parameters
+                        {
+                        tiempoRojo = Val; 20 ; 
+                        tiempoAmarillo = Val; 3 ; 
+                        tiempoVerde = Val; 17 ; 
+                        colorInicial = Val; 3 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Esquina2
+                    Ports = 1 ; 2
+                    Path = prooo/esquina.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -4005 ; -1755
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        tamanioEsquina = Val; 10 ; 
+                        velocidad = Val; 30 ; 
+                        probabilidad = Val; 0.5 ; 
+                        seed = Val; 1 ; 
+                        tamanioAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Semaforo Maipu
+                    Ports = 0 ; 1
+                    Path = prooo/semaforo.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -7530 ; -3630
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = ../atomics/prooo/imagenes/semaforo.jpg
+                        }
+                    Parameters
+                        {
+                        tiempoRojo = Val; 20 ; 
+                        tiempoAmarillo = Val; 3 ; 
+                        tiempoVerde = Val; 17 ; 
+                        colorInicial = Val; 1 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Generador Maipu
+                    Ports = 0 ; 1
+                    Path = prooo/generador.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -7530 ; -4980
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        tasa = Val; 0.2 ; 
+                        velCalle = Val; 30 ; 
+                        seed = Val; 3 ; 
+                        tamAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = calle Maipu
+                    Ports = 2 ; 1
+                    Path = prooo/calle.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -5205 ; -3180
+                        Dimension = 675 ; 675
+                        Direction = Right
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        velocidad = Val; 30 ; 
+                        tamanioCalle = Val; 100 ; 
+                        tamanioAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Calle larga
+                    Ports = 2 ; 1
+                    Path = prooo/calleLarga.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -9780 ; 570
+                        Dimension = 675 ; 675
+                        Direction = Left
+                        Color = 15
+                        Icon = None
+                        }
+                    Parameters
+                        {
+                        velocidad = Val; 30 ; 
+                        tamanioCalle = Val; 300 ; 
+                        tamanioAuto = Val; 2 ; 
+                        }
+                    }
+                Atomic
+                    {
+                    Name = Semaforo Calle larga
+                    Ports = 0 ; 1
+                    Path = prooo/semaforo.h
+                    Description = Atomic DEVS model
+                    Graphic
+                        {
+                        Position = -6105 ; 945
+                        Dimension = 675 ; 675
+                        Direction = Left
+                        Color = 15
+                        Icon = ../atomics/prooo/imagenes/semaforo.jpg
+                        }
+                    Parameters
+                        {
+                        tiempoRojo = Val; 20 ; 
+                        tiempoAmarillo = Val; 3 ; 
+                        tiempoVerde = Val; 17 ; 
+                        colorInicial = Val; 3 ; 
+                        }
+                    }
+                Point
+                    {
+                    ConectedLines = 6 ; 9 ; 10
+                    ConectedExtrems = Org ; Org ; Org
+                    Position = -4455 ; -1500
+                    }
+                Point
+                    {
+                    ConectedLines = 5 ; 13 ; 14
+                    ConectedExtrems = Org ; Org ; Org
+                    Position = -10080 ; -1800
+                    }
+                Line
+                    {
+                    Source = Cmp ;  3 ;  2 ; 0
+                    Sink = Cmp ;  5 ;  1 ; -1
+                    PointX = -8625 ; -8625 ; -7215
+                    PointY = -1575 ; -1575 ; -1575
+                    }
+                Line
+                    {
+                    Source = Cmp ;  2 ;  1 ; 0
+                    Sink = Cmp ;  4 ;  1 ; -1
+                    PointX = -12750 ; -11490 ; -11490
+                    PointY = -3225 ; -3225 ; -1875
+                    }
+                Line
+                    {
+                    Source = Cmp ;  6 ;  1 ; 0
+                    Sink = Cmp ;  5 ;  2 ; -1
+                    PointX = -7500 ; -7215 ; -7215
+                    PointY = -750 ; -750 ; -1275
+                    }
+                Line
+                    {
+                    Source = Cmp ;  1 ;  1 ; 0
+                    Sink = Cmp ;  4 ;  2 ; -1
+                    PointX = -12825 ; -11490 ; -11490
+                    PointY = -1425 ; -1425 ; -1575
+                    }
+                Line
+                    {
+                    Source = Cmp ;  3 ;  1 ; -1
+                    Sink = Pnt ;  2 ; -1 ; 0
+                    PointX = -9540 ; -10080 ; -10080
+                    PointY = -1725 ; -1725 ; -1800
+                    }
+                Line
+                    {
+                    Source = Cmp ;  5 ;  1 ; 0
+                    Sink = Pnt ;  1 ; -1 ; 0
+                    PointX = -6300 ; -4455 ; -4455
+                    PointY = -1425 ; -1425 ; -1500
+                    }
+                Line
+                    {
+                    Source = Cmp ;  9 ;  1 ; 0
+                    Sink = Cmp ;  10 ;  1 ; -1
+                    PointX = -6750 ; -5340 ; -5340
+                    PointY = -4650 ; -4650 ; -3000
+                    }
+                Line
+                    {
+                    Source = Cmp ;  8 ;  1 ; 0
+                    Sink = Cmp ;  10 ;  2 ; -1
+                    PointX = -6750 ; -6225 ; -6225 ; -5340
+                    PointY = -3300 ; -3300 ; -2700 ; -2700
+                    }
+                Line
+                    {
+                    Source = Cmp ;  10 ;  1 ; 0
+                    Sink = Pnt ;  1 ; -1 ; 0
+                    PointX = -4425 ; -4455 ; -4455
+                    PointY = -2850 ; -2850 ; -1500
+                    }
+                Line
+                    {
+                    Source = Pnt ;  1 ; -1 ; 0
+                    Sink = Cmp ;  7 ;  1 ; -1
+                    PointX = -4455 ; -4140 ; -4140
+                    PointY = -1500 ; -1500 ; -1425
+                    }
+                Line
+                    {
+                    Source = Cmp ;  7 ;  2 ; 0
+                    Sink = Cmp ;  11 ;  1 ; -1
+                    PointX = -3225 ; -3225 ; -8985
+                    PointY = -1275 ; 750 ; 750
+                    }
+                Line
+                    {
+                    Source = Cmp ;  12 ;  1 ; 0
+                    Sink = Cmp ;  11 ;  2 ; -1
+                    PointX = -6225 ; -6225 ; -8985
+                    PointY = 1275 ; 1050 ; 1050
+                    }
+                Line
+                    {
+                    Source = Cmp ;  11 ;  1 ; 0
+                    Sink = Pnt ;  2 ; -1 ; 0
+                    PointX = -9900 ; -10080 ; -10080
+                    PointY = 900 ; 900 ; -1800
+                    }
+                Line
+                    {
+                    Source = Pnt ;  2 ; -1 ; 0
+                    Sink = Cmp ;  4 ;  1 ; 0
+                    PointX = -10080 ; -10575 ; -10575
+                    PointY = -1800 ; -1800 ; -1725
+                    }
+                }
+            }
+        }
+    }
