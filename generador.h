@@ -7,7 +7,6 @@
 #include "simulator.h"
 #include "event.h"
 #include "stdarg.h"
-
 #include "lib/randomc.h"
 #include "lib/stocc.h"
 
@@ -23,10 +22,12 @@ int y;
 //parametros
 double tasa;
 double velCalle;
-double tamAuto;
 int seed;
 
 StochasticLib1 *stor;
+int tamanioAuto = 2;
+	double INF  = 1e20;
+
 
 public:
 	generador(const char *n): Simulator(n) {};

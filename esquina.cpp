@@ -1,4 +1,5 @@
 #include "esquina.h"
+
 void esquina::init(double t,...) {
 //The 'parameters' variable contains the parameters transferred from the editor.
 va_list parameters;
@@ -12,12 +13,11 @@ tamanioEsquina = va_arg(parameters,double);
 velocidad = va_arg(parameters,double);
 probabilidad = va_arg(parameters,double);
 seed= (int) va_arg(parameters,double);
-tamanioAuto= (int) va_arg(parameters,double);
 
 //obtengo el puntero para generar el random
 rng= new CRandomMersenne(seed);
 
-sigma = 1e20; //sigma 1e20inito
+sigma = INF; //sigma INFinito
 }
 
 double esquina::ta(double t) {
@@ -36,7 +36,7 @@ void esquina::dint(double t) {
 	if(Cola.size()>0)
 		sigma= Cola.getDistancia(0)/velocidad;
 	else
-		sigma= 1e20;
+		sigma= INF;
 }
 void esquina::dext(Event x, double t) {
 //The input event is in the 'x' variable.
@@ -58,7 +58,7 @@ void esquina::dext(Event x, double t) {
 		Cola.enqueue(tamanioEsquina,velocidad);
 	}
 	if(Cola.size()==0){
-		sigma= 1e20;
+		sigma= INF;
 	}
 	else{
 		sigma= Cola.getDistancia(0)/velocidad;

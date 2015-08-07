@@ -6,9 +6,9 @@
 #include "simulator.h"
 #include "event.h"
 #include "stdarg.h"
-
 #include "lib/randomc.h"
 #include "cola/cola.h"
+
 
 
 class calle: public Simulator { 
@@ -19,8 +19,6 @@ class calle: public Simulator {
 //estado
 cola Cola;
 double sigma;
-
-
 int color;
 
 	
@@ -30,10 +28,11 @@ double y;
 //parametros
 double velocidad;
 double tamanioCalle;
-double tamanioAuto;
 
 
 
+int tamanioAuto = 2;
+double INF  = 1e20;
 
 public:
 	calle(const char *n): Simulator(n) {};

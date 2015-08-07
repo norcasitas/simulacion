@@ -1,4 +1,5 @@
 #include "calle.h"
+
 void calle::init(double t,...) {
 //The 'parameters' variable contains the parameters transferred from the editor.
 va_list parameters;
@@ -9,11 +10,10 @@ va_start(parameters,t);
 //	%Type% is the parameter type
 velocidad = va_arg(parameters,double);
 tamanioCalle = va_arg(parameters,double);
-tamanioAuto= va_arg(parameters,double);
 
 					
 color = 1;
-sigma = 1e20;
+sigma = INF;
 
 }
 double calle::ta(double t) {
@@ -28,7 +28,7 @@ void calle::dint(double t) {
 			i++;
 		}
 		if(Cola.size() == 0){
-			sigma= 1e20;
+			sigma= INF;
 		}else{
 			sigma = Cola.getDistancia(0)/velocidad;
 		}	
@@ -84,7 +84,7 @@ if(x.port == 0){// viene un auto
 				Cola.setDistancia(i,Cola.getDistancia(i)-(Cola.getVelocidad(i)*e));				
 				i++;
 		}
-		sigma = 1e20;
+		sigma = INF;
 		color = 1;
 	}else{
 		int j = 0;

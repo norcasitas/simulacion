@@ -10,22 +10,22 @@ Root-Coordinator
       Simulator
        {
         Path = prooo/generador.h
-        Parameters = 1.000000e-01,3.000000e+01,3.000000e+00,2.000000e+00
+        Parameters = 1.000000e-01,3.000000e+01,3.000000e+00
        }
       Simulator
        {
         Path = prooo/esquina.h
-        Parameters = 1.000000e+01,3.000000e+01,4.000000e-01,1.000000e+00,2.000000e+00
+        Parameters = 1.000000e+01,3.000000e+01,4.000000e-01,1.000000e+00
        }
       Simulator
        {
         Path = prooo/calle.h
-        Parameters = 3.000000e+01,1.000000e+02,2.000000e+00
+        Parameters = 3.000000e+01,1.000000e+02
        }
       Simulator
        {
         Path = prooo/calleConflictiva.h
-        Parameters = 6.500000e+01,8.000000e+01,2.000000e+00
+        Parameters = 6.500000e+01,8.000000e+01
        }
       Simulator
        {
@@ -35,7 +35,7 @@ Root-Coordinator
       Simulator
        {
         Path = prooo/esquina.h
-        Parameters = 1.000000e+01,3.000000e+01,5.000000e-01,1.000000e+00,2.000000e+00
+        Parameters = 1.000000e+01,3.000000e+01,5.000000e-01,1.000000e+00
        }
       Simulator
        {
@@ -45,17 +45,17 @@ Root-Coordinator
       Simulator
        {
         Path = prooo/generador.h
-        Parameters = 2.000000e-01,3.000000e+01,3.000000e+00,2.000000e+00
+        Parameters = 2.000000e-01,3.000000e+01,3.000000e+00
        }
       Simulator
        {
         Path = prooo/calle.h
-        Parameters = 3.000000e+01,1.000000e+02,2.000000e+00
+        Parameters = 3.000000e+01,1.000000e+02
        }
       Simulator
        {
         Path = prooo/calleLarga.h
-        Parameters = 3.000000e+01,3.000000e+02,2.000000e+00
+        Parameters = 3.000000e+01,3.000000e+02
        }
       Simulator
        {

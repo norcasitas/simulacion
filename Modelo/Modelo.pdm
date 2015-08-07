@@ -57,7 +57,7 @@ Coupled
                         tiempoRojo = Val; 20 ; 
                         tiempoAmarillo = Val; 3 ; 
                         tiempoVerde = Val; 17 ; 
-                        colorInicial = Val; 1 ; 
+                        colorInicial = Val; 1 ; 1: Rojo, 2: Amarillo, 3: Verde
                         }
                     }
                 Atomic
@@ -79,7 +79,6 @@ Coupled
                         tasa = Val; 0.1 ; 
                         velCalle = Val; 30 ; 
                         seed = Val; 3 ; 
-                        tamAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -102,7 +101,6 @@ Coupled
                         velocidad = Val; 30 ; 
                         probabilidad = Val; 0.4 ; 
                         seed = Val; 1 ; 
-                        tamanioAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -123,7 +121,6 @@ Coupled
                         {
                         velocidad = Val; 30 ; 
                         tamanioCalle = Val; 100 ; 
-                        tamanioAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -144,7 +141,6 @@ Coupled
                         {
                         velocidad = Val; 65 ; 
                         tamanioCalle = Val; 80 ; 
-                        tamanioAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -166,7 +162,7 @@ Coupled
                         tiempoRojo = Val; 20 ; 
                         tiempoAmarillo = Val; 3 ; 
                         tiempoVerde = Val; 17 ; 
-                        colorInicial = Val; 3 ; 
+                        colorInicial = Val; 3 ; 1: Rojo, 2: Amarillo, 3: Verde
                         }
                     }
                 Atomic
@@ -189,7 +185,6 @@ Coupled
                         velocidad = Val; 30 ; 
                         probabilidad = Val; 0.5 ; 
                         seed = Val; 1 ; 
-                        tamanioAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -211,7 +206,7 @@ Coupled
                         tiempoRojo = Val; 20 ; 
                         tiempoAmarillo = Val; 3 ; 
                         tiempoVerde = Val; 17 ; 
-                        colorInicial = Val; 1 ; 
+                        colorInicial = Val; 1 ; 1: Rojo, 2: Amarillo, 3: Verde
                         }
                     }
                 Atomic
@@ -233,7 +228,6 @@ Coupled
                         tasa = Val; 0.2 ; 
                         velCalle = Val; 30 ; 
                         seed = Val; 3 ; 
-                        tamAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -254,7 +248,6 @@ Coupled
                         {
                         velocidad = Val; 30 ; 
                         tamanioCalle = Val; 100 ; 
-                        tamanioAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -275,7 +268,6 @@ Coupled
                         {
                         velocidad = Val; 30 ; 
                         tamanioCalle = Val; 300 ; 
-                        tamanioAuto = Val; 2 ; 
                         }
                     }
                 Atomic
@@ -297,7 +289,7 @@ Coupled
                         tiempoRojo = Val; 20 ; 
                         tiempoAmarillo = Val; 3 ; 
                         tiempoVerde = Val; 17 ; 
-                        colorInicial = Val; 3 ; 
+                        colorInicial = Val; 3 ; 1: Rojo, 2: Amarillo, 3: Verde
                         }
                     }
                 Point
